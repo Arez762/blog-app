@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Auth;
 
 class RoleMiddleware
 {
-    public function handle(Request $request, Closure $next, ...$roles) {
+    public function handle(Request $request, Closure $next, ...$roles)
+    {
         $user = Auth::user();
 
         // Periksa apakah user memiliki role yang diizinkan
@@ -20,4 +21,3 @@ class RoleMiddleware
         return redirect('/'); // Redirect jika user tidak punya akses
     }
 }
-

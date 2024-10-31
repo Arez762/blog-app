@@ -34,11 +34,11 @@ Route::middleware('auth')->group(function () {
 });
 
 
-// Route::middleware(['auth'])->group(function () {
-//     Route::resource('news', NewsController::class);
-//     Route::resource('categories', CategoryController::class)->middleware('can:isAdmin');
-//     Route::get('news/review', [NewsController::class, 'review'])->name('news.review')->middleware('can:isAdmin');
-// });
+Route::middleware(['auth'])->group(function () {
+    Route::resource('news', NewsController::class);
+    Route::resource('categories', CategoryController::class);
+    Route::get('news/review', [NewsController::class, 'review'])->name('news.review')->middleware('can:isAdmin');
+});
 
 
 require __DIR__ . '/auth.php';

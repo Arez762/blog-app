@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Category;
+use App\Models\category;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
